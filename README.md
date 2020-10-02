@@ -1,4 +1,4 @@
 # BAG_MulVAL
-BAG-MulVAL: Auxiliary analysis tool of intranet security
+BAG-MulVAL: an auxiliary analysis tool of intranet security based on MulVAL attack graph.
 
 Django Project
