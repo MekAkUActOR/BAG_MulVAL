@@ -1,0 +1,7 @@
+#!/Users/hongxing/PycharmProjects/MulVAL_BAG/venv/bin/python
+
+from domainr import Domain
+
+
+if __name__ == '__main__':
+    Domain().main()

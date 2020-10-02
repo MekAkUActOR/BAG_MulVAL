@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<style>
+    html{text-align:center}
+</style>
+<embed lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body style="background-image: url({% static '/imgs/S-ICS.png' %});background-size: auto 700px;background-position: 0px 0px;background-repeat:no-repeat;background-attachment:fixed;">
+    <h1 style="background: wheat;color: #000000;">BAG-MulVAL</h1>
+    <h3>Please upload a .P file</h3>
+    <form action="/mulval/mulval/" method="post" enctype="multipart/form-data">
+        <input type="file" name="upload"/>
+        <input type="submit" value="MulVAL"/>
+    </form>
+    <small style="color: red">{{ errinf }}</small>
+    <small style="color: black">{{ goodnews }}</small>
+    <br>
+
+    {% if retcode == 1 %}
+        <form action="/mulval/download/" method="post">
+            <input type="submit" value="Download the AG">
+        </form>
+        <br>
+        <small style="color: red">{{ a2berror }}</small>
+        <form action="/mulval/a2b/" method="post">
+            <select name="Attack Goal">
+                {% for aim in aimlist %}
+                    <option>{{ aim }}</option>
+                {% endfor %}
+                <option value="_">ALL</option>
+            </select>
+            <input type="submit" value="Generate a BAG!"/>
+        </form>
+    {% endif %}
+    <h2 style="color: black">Attack Graph Example</h2>
+    <embed src="/static/imgs/AttackGraph.pdf" width="1000" type="application/pdf" height="500" wmode='transparent'/>
+    <h2 style="color: black">Bayesian Attack Graph Example</h2>
+    <embed src="/static/imgs/result.dot.pdf" width="1000" type="application/pdf" height="500" wmode='transparent'/>
+
+    <!--<img src="/static/imgs/IMG_2175.jpeg"/>-->
+    <script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>

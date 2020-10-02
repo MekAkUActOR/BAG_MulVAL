@@ -1,0 +1,249 @@
+attackerLocated(internet).
+attackGoal(execCode(station1, _)).
+attackGoal(execCode(station2, _)).
+attackGoal(execCode(station3, _)).
+attackGoal(execCode(station4, _)).
+attackGoal(execCode(station5, _)).
+attackGoal(execCode(station6, _)).
+attackGoal(execCode(station7, _)).
+attackGoal(execCode(station8, _)).
+attackGoal(execCode(station9, _)).
+attackGoal(execCode(station10, _)).
+attackGoal(execCode(station11, _)).
+attackGoal(execCode(station12, _)).
+attackGoal(execCode(station13, _)).
+attackGoal(execCode(station14, _)).
+attackGoal(execCode(station15, _)).
+attackGoal(execCode(station16, _)).
+attackGoal(execCode(station17, _)).
+attackGoal(execCode(station18, _)).
+attackGoal(execCode(station19, _)).
+attackGoal(execCode(station20, _)).
+attackGoal(execCode(station21, _)).
+attackGoal(execCode(station22, _)).
+attackGoal(execCode(station23, _)).
+attackGoal(execCode(station24, _)).
+attackGoal(execCode(station25, _)).
+attackGoal(execCode(station26, _)).
+attackGoal(execCode(station27, _)).
+attackGoal(execCode(station28, _)).
+attackGoal(execCode(station29, _)).
+attackGoal(execCode(station30, _)).
+attackGoal(execCode(station31, _)).
+attackGoal(execCode(station32, _)).
+attackGoal(execCode(station33, _)).
+attackGoal(execCode(station34, _)).
+attackGoal(execCode(station35, _)).
+attackGoal(execCode(station36, _)).
+attackGoal(execCode(station37, _)).
+attackGoal(execCode(station38, _)).
+attackGoal(execCode(station39, _)).
+attackGoal(execCode(station40, _)).
+attackGoal(execCode(station41, _)).
+attackGoal(execCode(station42, _)).
+attackGoal(execCode(station43, _)).
+attackGoal(execCode(station44, _)).
+hacl(internet, station43, tcp, 80).
+networkServiceInfo(station43, _, tcp, 80, _).
+hacl(station19, station8, _, _).
+hacl(station5, station8, _, _).
+hacl(station5, station16, _, _).
+hacl(station3, station8, _, _).
+hacl(station30, station8, _, _).
+hacl(station35, station8, _, _).
+hacl(station39, station8, _, _).
+hacl(station28, station8, _, _).
+hacl(station2, station8, _, _).
+hacl(station32, station8, _, _).
+hacl(station43, station8, _, _).
+hacl(station43, station7, _, _).
+hacl(station36, station8, _, _).
+hacl(station24, station8, _, _).
+hacl(station21, station4, _, _).
+hacl(station8, station21, _, _).
+hacl(station8, station8, _, _).
+hacl(station8, station33, _, _).
+hacl(station8, station14, _, _).
+hacl(station16, station8, _, _).
+hacl(station4, station8, _, _).
+hacl(station29, station8, _, _).
+hacl(station23, station33, _, _).
+hacl(station44, station33, _, _).
+hacl(station33, station33, _, _).
+hacl(station33, station14, _, _).
+hacl(station20, station33, _, _).
+hacl(station37, station33, _, _).
+hacl(station27, station33, _, _).
+hacl(station25, station33, _, _).
+hacl(station13, station33, _, _).
+hacl(station6, station33, _, _).
+hacl(station11, station14, _, _).
+hacl(station17, station14, _, _).
+hacl(station10, station14, _, _).
+hacl(station14, station14, _, _).
+hacl(station41, station12, _, _).
+hacl(station12, station1, _, _).
+hacl(station1, station14, _, _).
+hacl(station1, station42, _, _).
+hacl(station42, station40, _, _).
+hacl(station40, station15, _, _).
+hacl(station15, station41, _, _).
+hacl(station34, station9, _, _).
+hacl(station26, station38, _, _).
+hacl(station26, station22, _, _).
+hacl(station31, station14, _, _).
+hacl(station31, station9, _, _).
+vulExists(station8, 'CVE-2020-6993', _).
+vulProperty('CVE-2020-6993', remoteExploit, privEscalation).
+vulExists(station8, 'CVE-2020-6995', _).
+vulProperty('CVE-2020-6995', remoteExploit, privEscalation).
+vulExists(station8, 'CVE-2020-6985', _).
+vulProperty('CVE-2020-6985', remoteExploit, privEscalation).
+vulExists(station8, 'CVE-2020-6983', _).
+vulProperty('CVE-2020-6983', remoteExploit, privEscalation).
+vulExists(station8, 'CVE-2020-6987', _).
+vulProperty('CVE-2020-6987', remoteExploit, privEscalation).
+vulExists(station14, 'CVE-2020-6993', _).
+vulProperty('CVE-2020-6993', remoteExploit, privEscalation).
+vulExists(station14, 'CVE-2020-6995', _).
+vulProperty('CVE-2020-6995', remoteExploit, privEscalation).
+vulExists(station14, 'CVE-2020-6985', _).
+vulProperty('CVE-2020-6985', remoteExploit, privEscalation).
+vulExists(station14, 'CVE-2020-6983', _).
+vulProperty('CVE-2020-6983', remoteExploit, privEscalation).
+vulExists(station14, 'CVE-2020-6987', _).
+vulProperty('CVE-2020-6987', remoteExploit, privEscalation).
+vulExists(station15, 'CVE-2020-6993', _).
+vulProperty('CVE-2020-6993', remoteExploit, privEscalation).
+vulExists(station15, 'CVE-2020-6995', _).
+vulProperty('CVE-2020-6995', remoteExploit, privEscalation).
+vulExists(station15, 'CVE-2020-6985', _).
+vulProperty('CVE-2020-6985', remoteExploit, privEscalation).
+vulExists(station15, 'CVE-2020-6983', _).
+vulProperty('CVE-2020-6983', remoteExploit, privEscalation).
+vulExists(station15, 'CVE-2020-6987', _).
+vulProperty('CVE-2020-6987', remoteExploit, privEscalation).
+vulExists(station21, 'CVE-2020-7478', _).
+vulProperty('CVE-2020-7478', remoteExploit, privEscalation).
+vulExists(station21, 'CVE-2020-7479', _).
+vulProperty('CVE-2020-7479', localExploit, privEscalation).
+vulExists(station23, 'CVE-2019-19097', _).
+vulProperty('CVE-2019-19097', remoteExploit, privEscalation).
+vulExists(station23, 'CVE-2019-19094', _).
+vulProperty('CVE-2019-19094', remoteExploit, privEscalation).
+vulExists(station23, 'CVE-2019-19093', _).
+vulProperty('CVE-2019-19093', remoteExploit, privEscalation).
+vulExists(station23, 'CVE-2019-19091', _).
+vulProperty('CVE-2019-19091', remoteExploit, privEscalation).
+vulExists(station24, 'CVE-2020-7478', _).
+vulProperty('CVE-2020-7478', remoteExploit, privEscalation).
+vulExists(station24, 'CVE-2020-7479', _).
+vulProperty('CVE-2020-7479', localExploit, privEscalation).
+vulExists(station27, 'CVE-2020-7478', _).
+vulProperty('CVE-2020-7478', remoteExploit, privEscalation).
+vulExists(station27, 'CVE-2020-7479', _).
+vulProperty('CVE-2020-7479', localExploit, privEscalation).
+vulExists(station29, 'CVE-2019-19097', _).
+vulProperty('CVE-2019-19097', remoteExploit, privEscalation).
+vulExists(station29, 'CVE-2019-19094', _).
+vulProperty('CVE-2019-19094', remoteExploit, privEscalation).
+vulExists(station29, 'CVE-2019-19093', _).
+vulProperty('CVE-2019-19093', remoteExploit, privEscalation).
+vulExists(station29, 'CVE-2019-19091', _).
+vulProperty('CVE-2019-19091', remoteExploit, privEscalation).
+vulExists(station31, 'CVE-2019-19097', _).
+vulProperty('CVE-2019-19097', remoteExploit, privEscalation).
+vulExists(station31, 'CVE-2019-19094', _).
+vulProperty('CVE-2019-19094', remoteExploit, privEscalation).
+vulExists(station31, 'CVE-2019-19093', _).
+vulProperty('CVE-2019-19093', remoteExploit, privEscalation).
+vulExists(station31, 'CVE-2019-19091', _).
+vulProperty('CVE-2019-19091', remoteExploit, privEscalation).
+vulExists(station33, 'CVE-2019-19097', _).
+vulProperty('CVE-2019-19097', remoteExploit, privEscalation).
+vulExists(station33, 'CVE-2019-19094', _).
+vulProperty('CVE-2019-19094', remoteExploit, privEscalation).
+vulExists(station33, 'CVE-2019-19093', _).
+vulProperty('CVE-2019-19093', remoteExploit, privEscalation).
+vulExists(station33, 'CVE-2019-19091', _).
+vulProperty('CVE-2019-19091', remoteExploit, privEscalation).
+vulExists(station35, 'CVE-2019-19097', _).
+vulProperty('CVE-2019-19097', remoteExploit, privEscalation).
+vulExists(station35, 'CVE-2019-19094', _).
+vulProperty('CVE-2019-19094', remoteExploit, privEscalation).
+vulExists(station35, 'CVE-2019-19093', _).
+vulProperty('CVE-2019-19093', remoteExploit, privEscalation).
+vulExists(station35, 'CVE-2019-19091', _).
+vulProperty('CVE-2019-19091', remoteExploit, privEscalation).
+vulExists(station40, 'CVE-2020-7478', _).
+vulProperty('CVE-2020-7478', remoteExploit, privEscalation).
+vulExists(station40, 'CVE-2020-7479', _).
+vulProperty('CVE-2020-7479', localExploit, privEscalation).
+vulExists(station43, 'CVE-2019-19097', _).
+vulProperty('CVE-2019-19097', remoteExploit, privEscalation).
+vulExists(station43, 'CVE-2019-19094', _).
+vulProperty('CVE-2019-19094', remoteExploit, privEscalation).
+vulExists(station43, 'CVE-2019-19093', _).
+vulProperty('CVE-2019-19093', remoteExploit, privEscalation).
+vulExists(station43, 'CVE-2019-19091', _).
+vulProperty('CVE-2019-19091', remoteExploit, privEscalation).
+networkServiceInfo(station8, mountd, rpc, _, _).
+nfsExportInfo(station8, '/export', write, station33).
+nfsExportInfo(station8, '/export', write, station14).
+nfsExportInfo(station8, '/export', write, station43).
+nfsExportInfo(station8, '/export', write, station39).
+localFileProtection(station8, root, _, _).
+nfsMounted(station5, '/usr/local/share', station8, '/export', read).
+nfsMounted(station21, '/usr/local/share', station8, '/export', read).
+nfsMounted(station36, '/usr/local/share', station8, '/export', read).
+nfsMounted(station43, '/usr/local/share', station8, '/export', read).
+nfsMounted(station3, '/usr/local/share', station8, '/export', read).
+nfsMounted(station30, '/usr/local/share', station8, '/export', read).
+nfsMounted(station35, '/usr/local/share', station8, '/export', read).
+nfsMounted(station19, '/usr/local/share', station8, '/export', read).
+nfsMounted(station33, '/usr/local/share', station8, '/export', read).
+nfsMounted(station14, '/usr/local/share', station8, '/export', read).
+networkServiceInfo(station14, mountd, rpc, _, _).
+nfsExportInfo(station14, '/export', write, station8).
+nfsExportInfo(station14, '/export', write, station33).
+nfsExportInfo(station14, '/export', write, station11).
+nfsExportInfo(station14, '/export', write, station10).
+nfsExportInfo(station14, '/export', write, station17).
+nfsExportInfo(station14, '/export', write, station1).
+localFileProtection(station14, root, _, _).
+nfsMounted(station8, '/usr/local/share', station14, '/export', read).
+nfsMounted(station33, '/usr/local/share', station14, '/export', read).
+nfsMounted(station11, '/usr/local/share', station14, '/export', read).
+nfsMounted(station17, '/usr/local/share', station14, '/export', read).
+nfsMounted(station1, '/usr/local/share', station14, '/export', read).
+networkServiceInfo(station15, mountd, rpc, _, _).
+nfsExportInfo(station15, '/export', write, station40).
+localFileProtection(station15, root, _, _).
+nfsMounted(station40, '/usr/local/share', station15, '/export', read).
+nfsMounted(station41, '/usr/local/share', station15, '/export', read).
+networkServiceInfo(station21, mountd, rpc, _, _).
+nfsExportInfo(station21, '/export', write, station4).
+localFileProtection(station21, root, _, _).
+networkServiceInfo(station24, mountd, rpc, _, _).
+nfsExportInfo(station24, '/export', write, station8).
+localFileProtection(station24, root, _, _).
+nfsMounted(station8, '/usr/local/share', station24, '/export', read).
+networkServiceInfo(station27, mountd, rpc, _, _).
+localFileProtection(station27, root, _, _).
+networkServiceInfo(station33, mountd, rpc, _, _).
+nfsExportInfo(station33, '/export', write, station8).
+nfsExportInfo(station33, '/export', write, station14).
+nfsExportInfo(station33, '/export', write, station13).
+nfsExportInfo(station33, '/export', write, station23).
+localFileProtection(station33, root, _, _).
+nfsMounted(station8, '/usr/local/share', station33, '/export', read).
+nfsMounted(station27, '/usr/local/share', station33, '/export', read).
+nfsMounted(station37, '/usr/local/share', station33, '/export', read).
+nfsMounted(station6, '/usr/local/share', station33, '/export', read).
+nfsMounted(station13, '/usr/local/share', station33, '/export', read).
+nfsMounted(station23, '/usr/local/share', station33, '/export', read).
+nfsMounted(station14, '/usr/local/share', station33, '/export', read).
+networkServiceInfo(station40, mountd, rpc, _, _).
+localFileProtection(station40, root, _, _).
+nfsMounted(station42, '/usr/local/share', station40, '/export', read).
+nfsMounted(station15, '/usr/local/share', station40, '/export', read).

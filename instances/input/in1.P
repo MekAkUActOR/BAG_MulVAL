@@ -1,0 +1,100 @@
+attackerLocated(internet).
+attackGoal(execCode(station0, _)).
+attackGoal(execCode(station1, _)).
+attackGoal(execCode(station2, _)).
+attackGoal(execCode(station3, _)).
+attackGoal(execCode(station4, _)).
+attackGoal(execCode(station5, _)).
+attackGoal(execCode(station6, _)).
+attackGoal(execCode(station7, _)).
+attackGoal(execCode(station8, _)).
+attackGoal(execCode(station9, _)).
+attackGoal(execCode(station10, _)).
+attackGoal(execCode(station11, _)).
+attackGoal(execCode(station12, _)).
+attackGoal(execCode(station13, _)).
+attackGoal(execCode(station14, _)).
+attackGoal(execCode(station15, _)).
+hacl(internet, station8, tcp, 80).
+networkServiceInfo(station8, _, tcp, 80, _).
+hacl(station5, station8, tcp, 80).
+hacl(station5, station6, tcp, 80).
+hacl(station8, station5, tcp, 80).
+hacl(station8, station9, tcp, 80).
+hacl(station8, station2, tcp, 80).
+hacl(station8, station7, tcp, 80).
+hacl(station8, station0, tcp, 80).
+hacl(station8, station3, tcp, 80).
+hacl(station8, station1, tcp, 80).
+hacl(station9, station8, tcp, 80).
+hacl(station9, station6, tcp, 80).
+hacl(station2, station8, tcp, 80).
+hacl(station2, station6, tcp, 80).
+hacl(station7, station8, tcp, 80).
+hacl(station7, station6, tcp, 80).
+hacl(station0, station8, tcp, 80).
+hacl(station0, station6, tcp, 80).
+hacl(station3, station8, tcp, 80).
+hacl(station3, station6, tcp, 80).
+hacl(station1, station8, tcp, 80).
+hacl(station1, station15, tcp, 80).
+hacl(station1, station6, tcp, 80).
+hacl(station6, station5, tcp, 80).
+hacl(station6, station9, tcp, 80).
+hacl(station6, station2, tcp, 80).
+hacl(station6, station7, tcp, 80).
+hacl(station6, station0, tcp, 80).
+hacl(station6, station3, tcp, 80).
+hacl(station6, station1, tcp, 80).
+hacl(station6, station15, tcp, 80).
+hacl(station10, station13, tcp, 80).
+hacl(station10, station14, tcp, 80).
+hacl(station4, station12, tcp, 80).
+hacl(station12, station4, tcp, 80).
+vulExists(station5, 'CVE-2019-5134', _).
+vulProperty('CVE-2019-5134', remoteExploit, privEscalation).
+vulExists(station5, 'CVE-2018-5459', _).
+vulProperty('CVE-2018-5459', remoteExploit, privEscalation).
+vulExists(station5, 'CVE-2019-5166', _).
+vulProperty('CVE-2019-5166', remoteExploit, privEscalation).
+vulExists(station5, 'CVE-2019-5155', _).
+vulProperty('CVE-2019-5155', remoteExploit, privEscalation).
+vulExists(station6, 'CVE-2019-5134', _).
+vulProperty('CVE-2019-5134', remoteExploit, privEscalation).
+vulExists(station6, 'CVE-2018-5459', _).
+vulProperty('CVE-2018-5459', remoteExploit, privEscalation).
+vulExists(station6, 'CVE-2019-5166', _).
+vulProperty('CVE-2019-5166', remoteExploit, privEscalation).
+vulExists(station6, 'CVE-2019-5155', _).
+vulProperty('CVE-2019-5155', remoteExploit, privEscalation).
+vulExists(station8, 'CVE-2019-5134', _).
+vulProperty('CVE-2019-5134', remoteExploit, privEscalation).
+vulExists(station8, 'CVE-2018-5459', _).
+vulProperty('CVE-2018-5459', remoteExploit, privEscalation).
+vulExists(station8, 'CVE-2019-5166', _).
+vulProperty('CVE-2019-5166', remoteExploit, privEscalation).
+vulExists(station8, 'CVE-2019-5155', _).
+vulProperty('CVE-2019-5155', remoteExploit, privEscalation).
+networkServiceInfo(station5, mountd, rpc, _, _).
+localFileProtection(station5, root, _, _).
+networkServiceInfo(station6, mountd, rpc, _, _).
+nfsExportInfo(station6, '/export', write, station1).
+nfsExportInfo(station6, '/export', write, station5).
+nfsExportInfo(station6, '/export', write, station8).
+nfsExportInfo(station6, '/export', write, station13).
+localFileProtection(station6, root, _, _).
+networkServiceInfo(station7, mountd, rpc, _, _).
+nfsExportInfo(station7, '/export', write, station1).
+nfsExportInfo(station7, '/export', write, station5).
+nfsExportInfo(station7, '/export', write, station8).
+nfsExportInfo(station7, '/export', write, station13).
+localFileProtection(station7, root, _, _).
+nfsMounted(station1, '/usr/local/share', station6, '/export', read).
+nfsMounted(station5, '/usr/local/share', station6, '/export', read).
+nfsMounted(station8, '/usr/local/share', station6, '/export', read).
+nfsMounted(station13, '/usr/local/share', station6, '/export', read).
+nfsMounted(station1, '/usr/local/share', station7, '/export', read).
+nfsMounted(station5, '/usr/local/share', station7, '/export', read).
+nfsMounted(station8, '/usr/local/share', station7, '/export', read).
+nfsMounted(station13, '/usr/local/share', station7, '/export', read).
+

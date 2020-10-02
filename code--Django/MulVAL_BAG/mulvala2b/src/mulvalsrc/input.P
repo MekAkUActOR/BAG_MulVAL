@@ -1,0 +1,229 @@
+/*enterprise network (a combination of N(now two) medium sized networks)*/
+/*enclave network 1(a medium sized network)*/
+
+attackerLocated(internet).
+attackGoal(execCode(workStation_1,_)).
+%attackGoal(execCode(fileServer_1,_)).
+attackGoal(execCode(mailServer_1,_)).
+attackGoal(execCode(subnet_1_1, _)).
+attackGoal(execCode(subnet_1_2, _)).
+
+/*Network connections*/
+hacl(internet, webServer_1, tcp, 80).
+hacl(webServer_1, mailServer_1, nfsProtocol, nfsPort).
+hacl(subnet_1_1, internet, httpProtocol, httpPort).
+hacl(subnet_1_2, internet, httpProtocol, httpPort).
+hacl(fileServer_1, internet, httpProtocol, httpPort).
+hacl(internet, fileServer_1, httpProtocol, httpPort).
+hacl(fileServer_1, workStation_1, nfsProtocol, nfsPort).
+
+
+hacl(webServer_1, internet,  _, _).
+hacl(mailServer_1, internet, _, _).
+%hacl(workStation_1, internet, _, _).
+%hacl(H,H,_,_).
+
+
+/* configuration information of mailServer_1 */
+networkServiceInfo(mailServer_1, mountd, rpc, 100005, root).
+nfsExportInfo(mailServer_1, '/export', read, workStation_1).
+nfsExportInfo(mailServer_1, '/export', read, webServer_1).
+nfsExportInfo(mailServer_1, '/export', write, workStation_1).
+nfsExportInfo(mailServer_1, '/export', write, webServer_1).
+
+ 
+/* configuration information of webServer_1 */ 
+vulExists(webServer_1, 'N1-2002-0392', httpd).
+vulProperty('N1-2002-0392', remoteExploit, privEscalation).
+networkServiceInfo(webServer_1 , httpd, tcp , 80 , apache).
+
+
+/* configuration information of mailServer_1 */
+%nfsMounted(workStation_1, '/usr/local/share', mailServer_1, '/export', read).
+
+/* configuration information of subnet_1_1 */
+vulExists(subnet_1_1,'N1-2010-0483',windows_2000).
+vulProperty('N1-2010-0483',remoteExploit,privEscalation).
+vulProperty('N1-2010-0483',remoteClient,privEscalation).
+inCompetent(victim_1_1).
+hasAccount(victim_1_1, 'subnet_1_1', user).
+
+
+/* configuration information of subnet_1_2 */
+vulExists(subnet_1_2,'N1-2010-0490',ie).
+vulProperty('N1-2010-0490',remoteExploit,privEscalation).
+vulProperty('N1-2010-0490',remoteClient,privEscalation).
+inCompetent(victim_1_2).
+hasAccount(victim_1_2, 'subnet_1_2', user).
+
+/* configuration information of fileServer_1 */
+vulExists(fileServer_1,'N1-2010-0812',windows_2003_server).
+vulProperty('N1-2010-0812',remoteExploit,privEscalation).
+vulProperty('N1-2010-0812',remoteClient,privEscalation).
+inCompetent(victim_1_3).
+hasAccount(victim_1_3, 'fileServer_1', user).
+
+
+/* configuration information of workStation_1 */
+remote_client_vul_exists(workStation_1,acrobat).
+vulExists(workStation_1,'N1-2010-0491',acrobat).
+vulProperty('N1-2010-0491',remoteExploit,privEscalation).
+vulProperty('N1-2010-0491',remoteClient,privEscalation).
+%inCompetent(victim_1_4).
+%hasAccount(victim_1_4, 'workStation_1', user).
+nfsExportInfo(workStation_1, '/export', write, fileServer_1).
+
+/*cvss metrics*/
+cvss('N1-2002-0392',h).
+cvss('N1-2010-0483',h).
+cvss('N1-2010-0490',m).
+cvss('N1-2009-2503',m).
+cvss('N1-2010-0812',m).
+cvss('N1-2010-0491',l).
+
+/*Client side applications*/
+isClient(windows_2003_server).
+isClient(windows_2000).
+isClient(firefox).
+isClient(office_word).
+isClient(itunes).
+isClient(acrobat).
+isClient(quicktime).
+isClient('.net_framework').
+isClient(office_frontpage).
+isClient(flash_player).
+isClient(adobe_air).
+isClient(compatibility_pack_word_excel_powerpoint).
+isClient(visual_basic).
+isClient(ie).
+isClient(excel).
+
+
+/*enclave network 2(a medium sized network)*/
+
+%attackerLocated(internet). 
+attackGoal(execCode(workStation_2,_)).
+attackGoal(execCode(fileServer_2,_)).
+attackGoal(execCode(vpnServer_2,_)).
+attackGoal(execCode(dataHistorian_2, _)).
+attackGoal(execCode(webServer_2, _)).
+attackGoal(execCode(commServer_2, _)).
+attackGoal(execCode(citrixServer_2, _)).
+
+
+/*Network connections*/
+hacl(internet, webServer_2, tcp, 80).
+%hacl(webServer_2, mailServer, nfsProtocol, nfsPort).
+hacl(internet, vpnServer_2, httpProtocol, httpPort).
+hacl(internet, citrixServer_2, httpProtocol, httpPort).
+hacl(internet, commServer_2, httpProtocol, httpPort).
+hacl(fileServer_2, workStation_2, nfsProtocol, nfsPort).
+hacl(citrixServer_2, vpnServer_2, httpProtocol, httpPort).
+hacl(vpnServer_2, citrixServer_2, httpProtocol, httpPort).
+hacl(vpnServer_2, workStation_2, httpProtocol, httpPort).
+hacl(workStation_2, vpnServer_2, httpProtocol, httpPort).
+hacl(commServer_2, dataHistorian_2,httpProtocol, httpPort).
+hacl(dataHistorian_2, commServer_2,httpProtocol, httpPort).
+hacl(webServer_2, fileServer_2, httpProtocol, httpPort).
+hacl(fileServer_2, webServer_2, httpProtocol, httpPort).
+hacl(fileServer_2, workStation_2, httpProtocol, httpPort).
+hacl(workStation_2, fileServer_2, httpProtocol, httpPort).
+hacl(workStation_2, webServer_2, httpProtocol, httpPort).
+hacl(webServer_2, workStation_2, httpProtocol, httpPort).
+
+hacl(citrixServer_2, internet, httpProtocol, httpPort).
+hacl(commServer_2, internet, httpProtocol, httpPort).
+hacl(vpnServer_2, internet, httpProtocol, httpPort).
+hacl(webServer_2, internet, httpProtocol, httpPort).
+
+hacl(webServer_2, internet,  _, _).
+hacl(mailServer, internet, _, _).
+%hacl(workStation_2, internet, _, _).
+%hacl(H,H,_,_).
+
+/* configuration information of citrixServer_2 */
+vulExists(citrixServer_2,'N2-2010-0490',ie).
+vulProperty('N2-2010-0490',remoteExploit,privEscalation).
+vulProperty('N2-2010-0490',remoteClient,privEscalation).
+inCompetent(victim_2_2).
+hasAccount(victim_2_2, citrixServer_2, user).
+
+/* configuration information of commServer_2 */
+vulExists(commServer_2,'N2-2010-0483',windows_2000).
+vulProperty('N2-2010-0483',remoteExploit,privEscalation).
+vulProperty('N2-2010-0483',remoteClient,privEscalation).
+inCompetent(victim_2_1).
+hasAccount(victim_2_1, commServer_2, user).
+
+/* configuration information of vpnServer_2 */
+vulExists(vpnServer_2,'N2-2010-0492',openvpn).
+vulProperty('N2-2010-0492',remoteExploit,privEscalation).
+%vulProperty('N2-2010-0492',remoteClient,privEscalation).
+inCompetent(victim_2_5).
+hasAccount(victim_2_5, 'vpnServer_2', user).
+
+/* configuration information of webServer_2 */
+vulExists(webServer_2, 'N2-2002-0392', httpd).
+vulProperty('N2-2002-0392', remoteExploit, privEscalation).
+%networkServiceInfo(webServer_2 , httpd, tcp , 80 , apache).
+isWebServer(webServer_2). 
+inCompetent(victim_2_7).
+hasAccount(victim_2_7, 'webServer_2', user).
+
+/* configuration information of dataHistorian_2 */
+vulExists(dataHistorian_2,'N2-2010-0494',mountd).
+vulProperty('N2-2010-0494',remoteExploit,privEscalation).
+%vulProperty('N2-2010-0494',remoteClient,privEscalation).
+%networkServiceInfo(webServer_2 , httpd, tcp , 80 , apache).
+networkServiceInfo(dataHistorian_2, mountd, httpProtocol, httpPort, root).
+
+/* configuration information of fileServer_2 */
+%remote_client_vul_exists(fileServer_2,windows_2003_server).
+vulExists(fileServer_2,'N2-2010-0812',windows_2003_server).
+vulProperty('N2-2010-0812',remoteExploit,privEscalation).
+vulProperty('N2-2010-0812',remoteClient,privEscalation).
+inCompetent(victim_2_3).
+hasAccount(victim_2_3, 'fileServer_2', user).
+
+
+/* configuration information of workStation_2 */
+%remote_client_vul_exists(workStation_2,acrobat).
+vulExists(workStation_2,'N2-2010-0491',acrobat).
+vulProperty('N2-2010-0491',remoteExploit,privEscalation).
+%vulProperty('N2-2010-0491',remoteClient,privEscalation).
+inCompetent(victim_2_4).
+hasAccount(victim_2_4, 'workStation_2', user).
+%nfsExportInfo(workStation_2, '/export', write, fileServer_2).
+
+/*cvss metrics*/
+cvss('N2-2002-0392',h).
+cvss('N2-2010-0483',h).
+cvss('N2-2010-0490',m).
+cvss('N2-2009-2503',m).
+cvss('N2-2010-0812',m).
+cvss('N2-2010-0491',l).
+cvss('N2-2010-0492',m).
+cvss('N2-2010-0493',m).
+cvss('N2-2010-0494',m).
+
+/*Client side applications*/
+isClient(httpd).
+isClient(mountd).
+isClient(windows_2003_server).
+isClient(windows_2000).
+isClient(openvpn).
+isClient(firefox).
+isClient(office_word).
+isClient(itunes).
+isClient(acrobat).
+isClient(quicktime).
+isClient('.net_framework').
+isClient(office_frontpage).
+isClient(flash_player).
+isClient(adobe_air).
+isClient(compatibility_pack_word_excel_powerpoint).
+isClient(visual_basic).
+isClient(ie).
+isClient(excel).
+
+
