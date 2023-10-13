@@ -13,7 +13,7 @@ Belongs to the main project [https://github.com/JianmingGuo/Sicsp_ICS](https://g
 
 ### 目标网络与OVAL扫描器模块
 
-本模块不属于本项目 web 应用 *BAG-MulVAL*，但是是 *BAG-MulVAL* 的输入来源。首先使用 Nessus 等 *OVAL* （开放式漏洞评估语言）扫描器对要分析的各种网络进行扫描。扫描得到的信息越多，最后的分析越充分完整。将扫描得到的网络配置信息、漏洞信息、主机互连信息写成 $Datalog$ 的事实和结果语句，即 .P 文件，通过网络传输到 _BAG-MulVAL_ web 应用上进行分析。
+本模块不属于本项目 web 应用 *BAG-MulVAL*，但是是 *BAG-MulVAL* 的输入来源。首先使用 Nessus 等 *OVAL* （开放式漏洞评估语言）扫描器对要分析的各种网络进行扫描。扫描得到的信息越多，最后的分析越充分完整。将扫描得到的网络配置信息、漏洞信息、主机互连信息写成 $Datalog$ 的事实和结果语句，即 .P 文件 (MulVAL为该步提供了自动化工具，本处不作介绍，可访问MulVAL官方网站：[http://www.arguslab.org/software/mulval.html](http://www.arguslab.org/software/mulval.html))，通过网络传输到 _BAG-MulVAL_ web 应用上进行分析。
 
 ### web 应用模块
 
