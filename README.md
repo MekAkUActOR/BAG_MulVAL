@@ -1,7 +1,7 @@
 # BAG_MulVAL
 BAG-MulVAL: an auxiliary analysis tool of intranet security based on MulVAL attack graph.
 
-An old version of the main project [https://github.com/JianmingGuo/Sicsp_ICS](https://github.com/JianmingGuo/Sicsp_ICS).
+An old version of the main projects [https://github.com/JianmingGuo/Sicsp_ICS](https://github.com/JianmingGuo/Sicsp_ICS) and [https://github.com/MekAkUActOR/Distributed_Bayesian_Attack_Graph](https://github.com/MekAkUActOR/Distributed_Bayesian_Attack_Graph).
 
 ***
 
